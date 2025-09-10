@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程列表 - YNU-健心</title>
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        @keyframes subtle-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-1 { animation: subtle-float 2s ease-in-out infinite; }
+        .float-2 { animation: subtle-float 3s ease-in-out infinite 1s; }
+        
+        /* 自定义分类栏样式 */
+        .category-tab {
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .category-tab.active {
+            background-color: #a855f7;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(168, 85, 247, 0.2);
+        }
+        .category-tab:not(.active) {
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #4b5563;
+        }
+        .category-tab:not(.active):hover {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* 课程卡片样式优化 */
+        .course-card {
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .course-card:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body class="bg-gray-200 flex justify-center items-center min-h-screen">
+    <div class="page-container flex flex-col max-h-[844px]">
+        <!-- Animated Background Shapes -->
+        <div class="absolute top-0 -left-20 w-72 h-72 bg-gradient-to-br from-purple-200 to-blue-200 rounded-full float-1 opacity-40"></div>
+        <div class="absolute bottom-0 -right-20 w-72 h-72 bg-gradient-to-tl from-blue-200 to-indigo-200 rounded-full float-2 opacity-40"></div>
+        
+        <!-- Header -->
+        <div class="page-header sticky top-0 z-30 bg-gradient-to-br from-purple-300 via-blue-200 to-teal-200">
+            <a href="index.html" class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1 class="page-title text-center">全部课程</h1>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content flex-1 overflow-y-auto">
+            <div class="p-6 space-y-6 relative z-10">
+                <!-- Search Bar -->
+                <div class="relative fade-in">
+                    <input type="text" placeholder="搜索课程" class="w-full py-3 px-4 rounded-full bg-white/40 backdrop-blur-xl shadow-sm border-0 focus:ring-2 focus:ring-purple-400 focus:outline-none pl-12">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-4 top-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+
+                <!-- Categories - 从悬浮改为固定 -->
+                <div class="relative z-20 -mx-6 px-6 pb-4 pt-2 bg-gradient-to-r from-purple-100/80 to-blue-100/80 backdrop-blur-xl shadow-sm">
+                    <!-- 主分类 -->
+                    <div class="flex gap-3 overflow-x-auto no-scrollbar pb-2">
+                        <button class="category-tab active">全部</button>
+                        <button class="category-tab">情绪管理</button>
+                        <button class="category-tab">心理健康</button>
+                        <button class="category-tab">人际关系</button>
+                        <button class="category-tab">正念冥想</button>
+                    </div>
+                    
+                    <!-- 子分类信息 -->
+                    <div class="mt-2 bg-white/70 backdrop-blur-sm rounded-xl p-2 shadow-sm">
+                        <div class="flex justify-between items-center">
+                            <div class="text-xs text-gray-500">4课时 · 初级</div>
+                            <div class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full">情绪管理</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Grid -->
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                    <!-- Course 1 -->
+                    <a href="course-detail.html?id=1" class="course-card block">
+                        <div class="w-full h-24 bg-gradient-to-br from-purple-200 to-indigo-200 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white/70" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mt-3 text-sm">情绪管理基础</h3>
+                        <div class="flex justify-between items-center mt-1">
+                            <p class="text-gray-500 text-xs">4课时 · 初级</p>
+                            <span class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full">情绪管理</span>
+                        </div>
+                    </a>
+
+                    <!-- Course 2 -->
+                    <a href="course-detail.html?id=2" class="course-card block">
+                        <div class="w-full h-24 bg-gradient-to-br from-blue-200 to-cyan-200 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white/70" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mt-3 text-sm">正念冥想</h3>
+                        <div class="flex justify-between items-center mt-1">
+                            <p class="text-gray-500 text-xs">6课时 · 中级</p>
+                            <span class="text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">正念冥想</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Course 3 -->
+                    <a href="course-detail.html?id=3" class="course-card block">
+                        <div class="w-full h-24 bg-gradient-to-br from-green-200 to-emerald-200 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white/70" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mt-3 text-sm">人际沟通技巧</h3>
+                        <div class="flex justify-between items-center mt-1">
+                            <p class="text-gray-500 text-xs">5课时 · 中级</p>
+                            <span class="text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full">人际关系</span>
+                        </div>
+                    </a>
+
+                    <!-- Course 4 -->
+                    <a href="course-detail.html?id=4" class="course-card block">
+                        <div class="w-full h-24 bg-gradient-to-br from-amber-200 to-yellow-200 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white/70" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mt-3 text-sm">压力管理与调节</h3>
+                        <div class="flex justify-between items-center mt-1">
+                            <p class="text-gray-500 text-xs">8课时 · 高级</p>
+                            <span class="text-xs bg-amber-100 text-amber-600 px-2 py-0.5 rounded-full">心理健康</span>
+                        </div>
+                    </a>
+
+                    <!-- Course 5 -->
+                    <a href="course-detail.html?id=5" class="course-card block">
+                        <div class="w-full h-24 bg-gradient-to-br from-rose-200 to-pink-200 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white/70" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mt-3 text-sm">自我关爱与成长</h3>
+                        <div class="flex justify-between items-center mt-1">
+                            <p class="text-gray-500 text-xs">6课时 · 初级</p>
+                            <span class="text-xs bg-rose-100 text-rose-600 px-2 py-0.5 rounded-full">心理健康</span>
+                        </div>
+                    </a>
+
+                    <!-- Course 6 -->
+                    <a href="course-detail.html?id=6" class="course-card block">
+                        <div class="w-full h-24 bg-gradient-to-br from-violet-200 to-purple-200 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white/70" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+                                <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mt-3 text-sm">高效沟通与倾听</h3>
+                        <div class="flex justify-between items-center mt-1">
+                            <p class="text-gray-500 text-xs">4课时 · 中级</p>
+                            <span class="text-xs bg-violet-100 text-violet-600 px-2 py-0.5 rounded-full">人际关系</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <footer id="bottom-nav" class="bg-white/60 backdrop-blur-xl border-t border-white/50 h-20 rounded-t-[30px] z-30">
+            <nav class="flex justify-around items-center h-full text-gray-500">
+                <a href="index.html" class="text-center">
+                    <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    <span class="text-xs">首页</span>
+                </a>
+                <a href="activities.html" class="text-center">
+                    <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                    <span class="text-xs">健心</span>
+                </a>
+                <a href="chat.html" class="text-center">
+                    <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    <span class="text-xs">AI聊天</span>
+                </a>
+                <a href="profile.html" class="text-center">
+                    <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    <span class="text-xs">我的</span>
+                </a>
+            </nav>
+        </footer>
+    </div>
+    
+    <script>
+        // 分类标签点击事件
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // 移除所有标签的active类
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    // 给当前点击的标签添加active类
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

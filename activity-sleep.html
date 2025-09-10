@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>睡眠管理 - YNU-健心</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200 flex justify-center items-center min-h-screen">
+    <!-- Phone Mockup -->
+    <div class="w-[390px] h-[844px] bg-slate-900 shadow-2xl rounded-[40px] overflow-hidden relative font-sans flex flex-col">
+        
+        <!-- Header with Back Button -->
+        <header class="absolute top-0 left-0 right-0 p-4 z-20 flex items-center justify-between">
+            <a href="activities.html" class="w-10 h-10 bg-white/10 backdrop-blur-xl rounded-full flex items-center justify-center shadow-md border border-white/20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+             <h1 class="text-lg font-bold text-white/80">睡眠管理</h1>
+             <div class="w-10"></div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="relative z-10 flex flex-col flex-1 items-center justify-center p-6 text-white/90 text-center space-y-8">
+            <div class="space-y-2">
+                 <p class="text-7xl font-bold">7<span class="text-3xl font-medium ml-2">h</span> 42<span class="text-3xl font-medium ml-2">m</span></p>
+                 <p class="text-white/60">昨晚睡眠时长</p>
+            </div>
+           
+            <!-- Sleep Cycle Line Chart -->
+            <div class="w-full h-56 flex flex-col justify-center items-center">
+                <svg width="100%" height="100%" viewBox="0 0 300 120">
+                    <defs>
+                        <linearGradient id="sleepGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.4"/>
+                            <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Y-axis labels -->
+                    <text x="5" y="25" font-size="10" fill="rgba(255,255,255,0.4)">清醒</text>
+                    <text x="5" y="55" font-size="10" fill="rgba(255,255,255,0.4)">浅睡</text>
+                    <text x="5" y="85" font-size="10" fill="rgba(255,255,255,0.4)">深睡</text>
+
+                    <!-- Dashed grid lines -->
+                    <line x1="40" y1="20" x2="300" y2="20" stroke="rgba(255,255,255,0.1)" stroke-dasharray="2,3"/>
+                    <line x1="40" y1="50" x2="300" y2="50" stroke="rgba(255,255,255,0.1)" stroke-dasharray="2,3"/>
+                    <line x1="40" y1="80" x2="300" y2="80" stroke="rgba(255,255,255,0.1)" stroke-dasharray="2,3"/>
+                    
+                    <!-- Gradient Area Path -->
+                    <path d="M 40 70 C 60 90, 80 90, 100 80 S 140 50, 160 60 S 200 90, 220 80 S 260 50, 280 60 L 280 110 L 40 110 Z" fill="url(#sleepGradient)" />
+
+                    <!-- Main Line Path -->
+                    <path d="M 40 70 C 60 90, 80 90, 100 80 S 140 50, 160 60 S 200 90, 220 80 S 260 50, 280 60" stroke="#A78BFA" stroke-width="2.5" fill="none" stroke-linecap="round" />
+
+                    <!-- Data points and labels -->
+                    <g>
+                        <circle cx="40" cy="70" r="3" fill="#fff" />
+                        <text x="35" y="65" font-size="8" fill="white">浅睡</text>
+                    </g>
+                    <g>
+                        <circle cx="100" cy="80" r="3" fill="#fff" />
+                        <text x="95" y="95" font-size="8" fill="white">深睡</text>
+                    </g>
+                     <g>
+                        <circle cx="160" cy="60" r="3" fill="#fff" />
+                        <text x="155" y="55" font-size="8" fill="white">浅睡</text>
+                    </g>
+                    <g>
+                        <circle cx="220" cy="80" r="3" fill="#fff" />
+                        <text x="215" y="95" font-size="8" fill="white">深睡</text>
+                    </g>
+                    <g>
+                        <circle cx="280" cy="60" r="3" fill="#fff" />
+                        <text x="275" y="55" font-size="8" fill="white">浅睡</text>
+                    </g>
+                </svg>
+                 <p class="text-white/60 text-sm mt-2">睡眠周期分析</p>
+            </div>
+        </main>
+        
+        <!-- Footer Controls -->
+        <footer class="p-8 z-10">
+            <button class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-4 rounded-full shadow-lg text-lg">
+                开始睡眠追踪
+            </button>
+        </footer>
+    </div>
+</body>
+</html> 

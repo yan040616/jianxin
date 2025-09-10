@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#87CEEB"/>
+            <stop offset="100%" stop-color="#E0F7FA"/>
+        </linearGradient>
+        <linearGradient id="grassGradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4CAF50"/>
+            <stop offset="100%" stop-color="#81C784"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Sky background -->
+    <rect width="512" height="512" fill="url(#skyGradient)"/>
+    
+    <!-- Sun -->
+    <circle cx="400" cy="100" r="60" fill="#FFD54F"/>
+    
+    <!-- Mountains -->
+    <path d="M0 200 L150 100 L300 180 L512 120 L512 512 L0 512 Z" fill="#78909C" opacity="0.7"/>
+    
+    <!-- Grass foreground -->
+    <path d="M0 300 Q128 250 256 300 Q384 350 512 300 L512 512 L0 512 Z" fill="url(#grassGradient)"/>
+    
+    <!-- Trees -->
+    <circle cx="100" cy="280" r="30" fill="#388E3C"/>
+    <circle cx="400" cy="260" r="40" fill="#388E3C"/>
+    <circle cx="180" cy="290" r="25" fill="#388E3C"/>
+</svg> 

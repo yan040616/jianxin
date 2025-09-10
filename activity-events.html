@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活动展示 - YNU-健心</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200 flex justify-center items-center min-h-screen">
+    <!-- Phone Mockup -->
+    <div class="w-[390px] h-[844px] bg-[#F0F2FE] shadow-2xl rounded-[40px] overflow-hidden relative font-sans flex flex-col">
+        
+        <!-- Header with Back Button -->
+        <header class="p-4 z-20 flex items-center justify-between bg-[#F0F2FE]/80 backdrop-blur-sm sticky top-0">
+            <a href="activities.html" class="w-10 h-10 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1 class="text-lg font-bold text-gray-800">活动展示</h1>
+            <div class="w-10"></div>
+        </header>
+
+        <!-- Background Gradient Shapes -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-red-200 to-transparent opacity-40 rounded-full -translate-x-1/4 -translate-y-1/4"></div>
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-orange-200 to-transparent opacity-40 rounded-full translate-x-1/4 translate-y-1/4"></div>
+        
+        <!-- Main Content -->
+        <main class="flex-1 w-full overflow-y-auto p-6 pt-2 space-y-4">
+            <!-- Event Card 1 -->
+            <div class="bg-white/50 backdrop-blur-xl rounded-2xl shadow-lg border border-white/50 overflow-hidden">
+                <img src="./images/events/music-festival.svg" class="w-full h-32 object-cover" alt="夏季草地音乐节">
+                <div class="p-4">
+                    <h3 class="font-bold text-gray-800 text-lg">夏季草地音乐节</h3>
+                    <p class="text-xs text-gray-500 mt-1">7月30日 @ 中心操场</p>
+                    <p class="text-sm text-gray-700 mt-2">带上你的朋友，一起来享受音乐和阳光吧！</p>
+                    <button class="mt-4 w-full bg-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:bg-orange-600 transition">查看详情</button>
+                </div>
+            </div>
+            <!-- Event Card 2 -->
+            <div class="bg-white/50 backdrop-blur-xl rounded-2xl shadow-lg border border-white/50 overflow-hidden">
+                <img src="./images/events/reading-club.svg" class="w-full h-32 object-cover" alt="读书分享会">
+                <div class="p-4">
+                    <h3 class="font-bold text-gray-800 text-lg">读书分享会</h3>
+                    <p class="text-xs text-gray-500 mt-1">8月5日 @ 图书馆报告厅</p>
+                    <p class="text-sm text-gray-700 mt-2">分享你最爱的一本书，结交志同道合的朋友。</p>
+                     <button class="mt-4 w-full bg-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:bg-orange-600 transition">查看详情</button>
+                </div>
+            </div>
+             <!-- Event Card 3 -->
+            <div class="bg-white/50 backdrop-blur-xl rounded-2xl shadow-lg border border-white/50 overflow-hidden">
+                <img src="./images/events/volunteer.svg" class="w-full h-32 object-cover" alt="校园志愿者招募">
+                <div class="p-4">
+                    <h3 class="font-bold text-gray-800 text-lg">校园志愿者招募</h3>
+                    <p class="text-xs text-gray-500 mt-1">长期有效 @ 青年志愿者协会</p>
+                    <p class="text-sm text-gray-700 mt-2">用你的爱心，为校园增添一份温暖。</p>
+                     <button class="mt-4 w-full bg-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:bg-orange-600 transition">查看详情</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html> 

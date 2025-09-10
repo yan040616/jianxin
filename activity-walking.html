@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正念健步走 - YNU-健心</title>
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        @keyframes subtle-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-1 { animation: subtle-float 2s ease-in-out infinite; }
+        .float-2 { animation: subtle-float 3s ease-in-out infinite 1s; }
+        .controls button { transition: transform 0.1s ease; }
+        .controls button:active { transform: scale(0.95); }
+        .play-pause-btn.paused {
+            background-image: none;
+            background-color: #ef4444; /* red-500 */
+        }
+    </style>
+</head>
+<body class="bg-gray-200 flex justify-center items-center min-h-screen">
+    <!-- Phone Mockup -->
+    <div class="w-[390px] h-[844px] bg-[#F0F2FE] shadow-2xl rounded-[40px] overflow-hidden relative font-sans flex flex-col">
+        
+        <!-- Header with Back Button -->
+        <header class="absolute top-0 left-0 right-0 p-4 z-20 flex items-center">
+            <a href="activities.html" class="w-10 h-10 bg-white/40 backdrop-blur-xl rounded-full flex items-center justify-center shadow-md border border-white/50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+        </header>
+
+        <!-- Animated Background Shapes -->
+        <div class="absolute top-1/4 -left-20 w-64 h-64 bg-gradient-to-br from-purple-400 to-indigo-400 rounded-full float-1 opacity-30"></div>
+        <div class="absolute bottom-1/4 -right-20 w-56 h-56 bg-gradient-to-tl from-purple-400 to-indigo-400 rounded-full float-2 opacity-30"></div>
+
+
+        <!-- Main Content -->
+        <main class="relative z-10 flex flex-col flex-1 justify-end p-6 pb-8">
+            <div class="bg-white/60 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-white/50 text-center space-y-4">
+                <h1 class="text-3xl font-bold text-gray-800">正念健步走</h1>
+                <p class="text-gray-600">专注于你的步伐与呼吸，感受当下。</p>
+                
+                <!-- Timer -->
+                <div class="text-6xl font-mono font-bold text-gray-900 tracking-tight">
+                    <span id="timer">00:00</span>
+                </div>
+
+                <!-- Stats -->
+                <div class="flex justify-around text-center border-t border-b border-gray-900/10 py-3">
+                    <div>
+                        <p class="text-2xl font-semibold text-gray-800"><span id="distance">0.00</span><span class="text-sm ml-1">km</span></p>
+                        <p class="text-xs text-gray-500">距离</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-semibold text-gray-800" id="steps">0</p>
+                        <p class="text-xs text-gray-500">步数</p>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="flex justify-center items-center gap-8 pt-2 controls">
+                    <button id="play-pause-btn" class="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg text-white play-pause-btn">
+                        <!-- Icon will be injected by JS -->
+                    </button>
+                    <button id="stop-btn" class="w-20 h-20 bg-red-500 rounded-full flex items-center justify-center shadow-lg text-white">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 20 20">
+                            <rect x="6" y="6" width="8" height="8" rx="1" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        const timerEl = document.getElementById('timer');
+        const distanceEl = document.getElementById('distance');
+        const stepsEl = document.getElementById('steps');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const stopBtn = document.getElementById('stop-btn');
+
+        const playIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg>`;
+        const pauseIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1zm4 0a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" /></svg>`;
+
+        let seconds = 0;
+        let distance = 0;
+        let steps = 0;
+        let interval = null;
+        let isRunning = false;
+
+        function formatTime(sec) {
+            const minutes = Math.floor(sec / 60);
+            const seconds = sec % 60;
+            return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        function updateDisplay() {
+            timerEl.textContent = formatTime(seconds);
+            distanceEl.textContent = distance.toFixed(2);
+            stepsEl.textContent = steps;
+        }
+
+        function run() {
+            seconds++;
+            // Simulate distance and steps increase
+            if (seconds % 4 === 0) {
+                distance += 0.01;
+                steps += Math.floor(Math.random() * 5) + 8;
+            }
+            updateDisplay();
+        }
+        
+        function updateButton() {
+            if (isRunning) {
+                playPauseBtn.innerHTML = pauseIcon;
+                playPauseBtn.classList.add('paused');
+            } else {
+                playPauseBtn.innerHTML = playIcon;
+                playPauseBtn.classList.remove('paused');
+            }
+
+        }
+
+        playPauseBtn.addEventListener('click', () => {
+            isRunning = !isRunning;
+            if (isRunning) {
+                interval = setInterval(run, 1000);
+            } else {
+                clearInterval(interval);
+            }
+            updateButton();
+        });
+
+        stopBtn.addEventListener('click', () => {
+            clearInterval(interval);
+            isRunning = false;
+            seconds = 0;
+            distance = 0;
+            steps = 0;
+            updateDisplay();
+            updateButton();
+        });
+
+        // Initial State
+        updateButton();
+
+    </script>
+</body>
+</html> 

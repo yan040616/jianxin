@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心晴随笔 - YNU-健心</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200 flex justify-center items-center min-h-screen">
+    <!-- Phone Mockup -->
+    <div class="w-[390px] h-[844px] bg-[#F0F2FE] shadow-2xl rounded-[40px] overflow-hidden relative font-sans flex flex-col">
+        
+        <!-- Header with Back Button -->
+        <header class="p-4 z-20 flex items-center justify-between bg-[#F0F2FE]/80 backdrop-blur-sm sticky top-0">
+            <a href="activities.html" class="w-10 h-10 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1 class="text-lg font-bold text-gray-800">心晴随笔</h1>
+            <div class="w-10"></div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="flex-1 w-full overflow-y-auto p-6 pt-2 space-y-6">
+            <!-- Calendar Mockup -->
+            <div class="bg-white/50 backdrop-blur-xl rounded-2xl p-4 shadow-lg border border-white/50">
+                 <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-gray-700">2024年 7月</h3>
+                    <div class="flex gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" /></svg>
+                    </div>
+                 </div>
+                 <div class="grid grid-cols-7 text-center text-xs text-gray-500">
+                    <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+                 </div>
+                 <div class="grid grid-cols-7 text-center text-sm mt-2">
+                    <span class="text-gray-400"></span><span class="text-gray-400"></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                    <span>6</span><span class="bg-yellow-300 text-yellow-800 rounded-full w-7 h-7 leading-7 mx-auto">7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+                    <span>13</span><span>14</span><span>15</span><span class="bg-purple-300 text-purple-800 rounded-full w-7 h-7 leading-7 mx-auto">16</span><span>17</span><span>18</span><span>19</span>
+                    <span>20</span><span>21</span><span>22</span><span class="bg-purple-500 text-white rounded-full w-7 h-7 leading-7 mx-auto">23</span><span>24</span><span>25</span><span>26</span>
+                    <span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
+                 </div>
+            </div>
+            
+            <!-- Journal Entries -->
+            <div class="space-y-4">
+                <div class="bg-white/50 backdrop-blur-xl rounded-2xl p-4 shadow-lg border border-white/50">
+                    <p class="text-xs text-gray-500 mb-1">7月23日 · 😊 开心</p>
+                    <p class="text-gray-800 text-sm">今天天气真好，和朋友出去玩了一天，非常开心！晚上还吃了大餐，完美的一天。</p>
+                </div>
+                 <div class="bg-white/50 backdrop-blur-xl rounded-2xl p-4 shadow-lg border border-white/50">
+                    <p class="text-xs text-gray-500 mb-1">7月16日 · 😐 平静</p>
+                    <p class="text-gray-800 text-sm">在图书馆呆了一天，虽然有点累，但是学到了很多东西，内心很平静，感觉很充实。</p>
+                </div>
+                 <div class="bg-white/50 backdrop-blur-xl rounded-2xl p-4 shadow-lg border border-white/50">
+                    <p class="text-xs text-gray-500 mb-1">7月7日 · 🤔 有点烦恼</p>
+                    <p class="text-gray-800 text-sm">遇到了一些小麻烦，心情有点受影响。不过我相信我可以解决的！</p>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Floating Add Button -->
+        <div class="absolute bottom-8 right-8 z-20">
+            <button class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
+            </button>
+        </div>
+    </div>
+</body>
+</html> 

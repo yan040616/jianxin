@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐动我心 - YNU-健心</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200 flex justify-center items-center min-h-screen">
+    <!-- Phone Mockup -->
+    <div class="w-[390px] h-[844px] bg-gradient-to-br from-orange-100 to-rose-100 shadow-2xl rounded-[40px] overflow-hidden relative font-sans flex flex-col">
+        
+        <!-- Header with Back Button -->
+        <header class="absolute top-0 left-0 right-0 p-4 z-20 flex items-center">
+            <a href="activities.html" class="w-10 h-10 bg-white/40 backdrop-blur-xl rounded-full flex items-center justify-center shadow-md border border-white/50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1 class="text-lg font-bold text-gray-800 text-center flex-1">疗愈音乐</h1>
+            <div class="w-10"></div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 w-full overflow-y-auto p-6 flex flex-col justify-center items-center">
+            <!-- Music Player -->
+            <div class="w-full max-w-sm bg-white/50 backdrop-blur-xl rounded-3xl p-6 shadow-lg border border-white/50 flex flex-col items-center space-y-6">
+                
+                <!-- Album Art -->
+                <div class="w-56 h-56 rounded-2xl shadow-2xl overflow-hidden transform group-hover:scale-105 transition-transform duration-300">
+                    <img src="./images/calm-nature.svg" alt="宁静自然" class="w-full h-full object-cover">
+                </div>
+                
+                <!-- Song Info -->
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-gray-800">宁静自然</h2>
+                    <p class="text-sm text-gray-500 mt-1">冥想放松音乐</p>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="w-full space-y-1 pt-2">
+                    <div class="bg-black/10 h-1.5 rounded-full w-full cursor-pointer">
+                        <div class="bg-gradient-to-r from-orange-500 to-rose-500 h-1.5 rounded-full" style="width: 45%;"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-gray-600">
+                        <span>1:35</span>
+                        <span>3:30</span>
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <div class="w-full flex justify-center items-center gap-8">
+                    <button class="text-gray-600 hover:text-gray-800 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8.445 14.832A1 1 0 0010 14.168V5.832a1 1 0 00-1.555-.832L4.5 9.168a1 1 0 000 1.664l3.945 4.001zm6.11-1.168a1 1 0 00-1.555.832V5.832a1 1 0 001.555-.832l-3.945-4a1 1 0 00-1.555.832v8.336a1 1 0 001.555.832l3.945-4z"/>
+                        </svg>
+                    </button>
+                    <button class="w-20 h-20 bg-gradient-to-br from-orange-500 to-rose-500 rounded-full flex items-center justify-center shadow-lg text-white transform active:scale-95 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1zm4 0a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <button class="text-gray-600 hover:text-gray-800 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M11.555 5.168A1 1 0 0010 5.832v8.336a1 1 0 001.555.832l3.945-4.001a1 1 0 000-1.664l-3.945-4.001zm-6.11 1.168a1 1 0 00-1.555.832v8.336a1 1 0 001.555.832l3.945-4a1 1 0 000-1.664l-3.945-4z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer Buttons -->
+        <footer class="p-6 z-10 space-y-3">
+            <button class="w-full bg-white/60 backdrop-blur-xl rounded-xl p-3 shadow-lg border border-white/50 flex justify-between items-center text-left transform active:scale-95 transition-transform">
+                <div>
+                    <p class="font-semibold text-gray-700 text-sm">切换背景音乐</p>
+                    <p class="text-xs text-gray-500">4种冥想音乐可选</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </button>
+             <button class="w-full bg-white/60 backdrop-blur-xl rounded-xl p-3 shadow-lg border border-white/50 flex justify-between items-center text-left transform active:scale-95 transition-transform">
+                <div>
+                    <p class="font-semibold text-gray-700 text-sm">录制我的声音</p>
+                    <p class="text-xs text-gray-500">记录此刻的心情</p>
+                </div>
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-rose-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8h-1a6 6 0 11-5.93 5.93V15H13a1 1 0 110 2H7a1 1 0 110-2h1.07z" clip-rule="evenodd" />
+                </svg>
+            </button>
+        </footer>
+    </div>
+</body>
+</html> 

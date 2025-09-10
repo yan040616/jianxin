@@ -1,0 +1,66 @@
+<svg width="390" height="200" viewBox="0 0 390 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FF8C00" />
+            <stop offset="100%" stop-color="#FFA500" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="390" height="200" fill="url(#bgGradient)" />
+    
+    <!-- Stage -->
+    <rect x="45" y="120" width="300" height="40" rx="5" fill="#8B4513" />
+    
+    <!-- Music notes and symbols -->
+    <g fill="white" opacity="0.9">
+        <!-- Music notes -->
+        <path d="M100 60 C100 50, 110 45, 115 50 L115 90 C115 95, 105 100, 100 95 Z" />
+        <line x1="115" y1="50" x2="125" y2="40" stroke="white" stroke-width="3" />
+        <circle cx="125" cy="40" r="8" />
+        
+        <path d="M150 40 C150 30, 160 25, 165 30 L165 70 C165 75, 155 80, 150 75 Z" />
+        <line x1="165" y1="30" x2="175" y2="20" stroke="white" stroke-width="3" />
+        <circle cx="175" cy="20" r="8" />
+        
+        <path d="M200 70 C200 60, 210 55, 215 60 L215 100 C215 105, 205 110, 200 105 Z" />
+        <line x1="215" y1="60" x2="225" y2="50" stroke="white" stroke-width="3" />
+        <circle cx="225" cy="50" r="8" />
+        
+        <!-- Guitar -->
+        <path d="M280 50 C300 70, 320 90, 310 110 C300 130, 270 130, 260 110 C250 90, 270 70, 280 50 Z" />
+        <line x1="280" y1="50" x2="270" y2="20" stroke="white" stroke-width="2" />
+        <rect x="265" y="10" width="10" height="10" />
+        
+        <!-- Stage microphone -->
+        <rect x="195" y="80" width="5" height="40" />
+        <circle cx="197.5" cy="75" r="10" />
+    </g>
+    
+    <!-- People silhouettes -->
+    <g fill="black" opacity="0.7">
+        <circle cx="80" cy="150" r="15" />
+        <rect x="70" y="165" width="20" height="30" rx="5" />
+        
+        <circle cx="120" cy="150" r="15" />
+        <rect x="110" y="165" width="20" height="30" rx="5" />
+        
+        <circle cx="160" cy="150" r="15" />
+        <rect x="150" y="165" width="20" height="30" rx="5" />
+        
+        <circle cx="200" cy="150" r="15" />
+        <rect x="190" y="165" width="20" height="30" rx="5" />
+        
+        <circle cx="240" cy="150" r="15" />
+        <rect x="230" y="165" width="20" height="30" rx="5" />
+        
+        <circle cx="280" cy="150" r="15" />
+        <rect x="270" y="165" width="20" height="30" rx="5" />
+        
+        <circle cx="320" cy="150" r="15" />
+        <rect x="310" y="165" width="20" height="30" rx="5" />
+    </g>
+    
+    <!-- Text -->
+    <text x="195" y="190" font-family="Arial" font-size="16" fill="white" text-anchor="middle" font-weight="bold">夏季草地音乐节</text>
+</svg> 

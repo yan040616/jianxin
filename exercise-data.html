@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运动数据 - YNU-健心</title>
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-200 flex justify-center items-center min-h-screen">
+    <div class="w-[390px] max-h-[844px] bg-[#F0F2FE] shadow-2xl rounded-[40px] overflow-hidden relative font-sans flex flex-col">
+        <!-- Header -->
+        <div class="page-header sticky top-0 z-30" style="background: linear-gradient(to right, rgba(34, 197, 94, 0.8), rgba(16, 185, 129, 0.8));">
+            <a href="javascript:history.back()" class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1 class="page-title text-center text-white">运动数据</h1>
+        </div>
+
+        <!-- Main Content -->
+        <main class="p-6 space-y-6 overflow-y-auto flex-1">
+            <!-- Today's Data -->
+            <div class="card p-4">
+                <h2 class="font-semibold text-gray-700 mb-3">今日数据</h2>
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="bg-white/50 rounded-lg p-3 text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                        <p class="text-xl font-semibold text-gray-800 mt-1">8,120</p>
+                        <p class="text-xs text-gray-500">步数</p>
+                    </div>
+                    <div class="bg-white/50 rounded-lg p-3 text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <p class="text-xl font-semibold text-gray-800 mt-1">325</p>
+                        <p class="text-xs text-gray-500">消耗(千卡)</p>
+                    </div>
+                    <div class="bg-white/50 rounded-lg p-3 text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <p class="text-xl font-semibold text-gray-800 mt-1">45</p>
+                        <p class="text-xs text-gray-500">时长(分钟)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Steps Progress -->
+            <div class="card p-4">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="font-semibold text-gray-700">今日步数目标</h3>
+                    <p class="text-sm text-gray-500">8,120 / 10,000</p>
+                </div>
+                <div class="w-full bg-gray-200/50 rounded-full h-3">
+                    <div class="bg-gradient-to-r from-lime-400 to-green-500 h-3 rounded-full" style="width: 81%"></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">距离目标还有1,880步</p>
+            </div>
+
+            <!-- Weekly Steps Chart -->
+            <div class="card p-4">
+                <h2 class="font-semibold text-gray-700 mb-4">一周步数趋势</h2>
+                <div class="w-full h-60">
+                    <canvas id="stepsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Exercise Stats -->
+            <div class="card p-4">
+                <h2 class="font-semibold text-gray-700 mb-3">本周运动统计</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/50 rounded-lg p-3">
+                        <div class="flex justify-between items-center">
+                            <p class="text-gray-600 text-sm">总步数</p>
+                            <span class="text-green-500 text-xs">+12%</span>
+                        </div>
+                        <p class="text-xl font-semibold text-gray-800 mt-1">56,438</p>
+                    </div>
+                    <div class="bg-white/50 rounded-lg p-3">
+                        <div class="flex justify-between items-center">
+                            <p class="text-gray-600 text-sm">总消耗</p>
+                            <span class="text-green-500 text-xs">+8%</span>
+                        </div>
+                        <p class="text-xl font-semibold text-gray-800 mt-1">2,145千卡</p>
+                    </div>
+                    <div class="bg-white/50 rounded-lg p-3">
+                        <div class="flex justify-between items-center">
+                            <p class="text-gray-600 text-sm">总时长</p>
+                            <span class="text-green-500 text-xs">+15%</span>
+                        </div>
+                        <p class="text-xl font-semibold text-gray-800 mt-1">315分钟</p>
+                    </div>
+                    <div class="bg-white/50 rounded-lg p-3">
+                        <div class="flex justify-between items-center">
+                            <p class="text-gray-600 text-sm">运动天数</p>
+                        </div>
+                        <p class="text-xl font-semibold text-gray-800 mt-1">6/7天</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity History -->
+            <div class="card space-y-4">
+                <h2 class="font-semibold text-gray-700">近期活动记录</h2>
+                <div class="space-y-2">
+                    <div class="list-item">
+                        <div class="flex-grow">
+                            <p class="font-medium text-gray-800">健步走</p>
+                            <p class="text-sm text-gray-500">2024-04-15 · 45分钟</p>
+                        </div>
+                        <span class="text-green-500 font-medium flex-shrink-0">8,120步</span>
+                    </div>
+                    <div class="list-item">
+                        <div class="flex-grow">
+                            <p class="font-medium text-gray-800">慢跑</p>
+                            <p class="text-sm text-gray-500">2024-04-14 · 30分钟</p>
+                        </div>
+                        <span class="text-green-500 font-medium flex-shrink-0">6,540步</span>
+                    </div>
+                    <div class="list-item">
+                        <div class="flex-grow">
+                            <p class="font-medium text-gray-800">健步走</p>
+                            <p class="text-sm text-gray-500">2024-04-13 · 60分钟</p>
+                        </div>
+                        <span class="text-green-500 font-medium flex-shrink-0">12,350步</span>
+                    </div>
+                    <div class="list-item">
+                        <div class="flex-grow">
+                            <p class="font-medium text-gray-800">瑜伽</p>
+                            <p class="text-sm text-gray-500">2024-04-12 · 45分钟</p>
+                        </div>
+                        <span class="text-green-500 font-medium flex-shrink-0">2,100步</span>
+                    </div>
+                    <div class="list-item">
+                        <div class="flex-grow">
+                            <p class="font-medium text-gray-800">健步走</p>
+                            <p class="text-sm text-gray-500">2024-04-11 · 50分钟</p>
+                        </div>
+                        <span class="text-green-500 font-medium flex-shrink-0">9,870步</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Start Exercise Button -->
+            <div class="absolute bottom-6 right-6 z-20">
+                <button class="w-14 h-14 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 text-white flex items-center justify-center shadow-lg transform active:scale-90 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 绘制步数折线图
+            const ctx = document.getElementById('stepsChart').getContext('2d');
+            
+            const stepsData = [9870, 2100, 12350, 6540, 8120, 0, 0];
+            const dates = ['04-11', '04-12', '04-13', '04-14', '04-15', '04-16', '04-17'];
+            
+            const gradientFill = ctx.createLinearGradient(0, 0, 0, 400);
+            gradientFill.addColorStop(0, 'rgba(34, 197, 94, 0.5)');
+            gradientFill.addColorStop(1, 'rgba(34, 197, 94, 0.1)');
+            
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: '步数',
+                        data: stepsData,
+                        borderColor: '#22C55E',
+                        backgroundColor: gradientFill,
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.3,
+                        pointBackgroundColor: '#22C55E',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 5
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    if (value >= 1000) {
+                                        return (value / 1000).toFixed(0) + 'k';
+                                    }
+                                    return value;
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const value = context.parsed.y;
+                                    return value + ' 步';
+                                }
+                            }
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+ 

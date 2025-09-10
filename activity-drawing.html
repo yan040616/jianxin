@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画解心情 - YNU-健心</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200 flex justify-center items-center min-h-screen">
+    <!-- Phone Mockup -->
+    <div class="w-[390px] h-[844px] bg-[#F0F2FE] shadow-2xl rounded-[40px] overflow-hidden relative font-sans flex flex-col">
+        
+        <!-- Header with Back Button -->
+        <header class="absolute top-0 left-0 right-0 p-4 z-20 flex items-center justify-between">
+            <a href="activities.html" class="w-10 h-10 bg-white/40 backdrop-blur-xl rounded-full flex items-center justify-center shadow-md border border-white/50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1 class="text-lg font-bold text-gray-800">曼陀罗绘画</h1>
+            <button class="w-10 h-10 flex items-center justify-center">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h5M5 12a7 7 0 112.234 5.234" /></svg>
+            </button>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 w-full overflow-y-auto p-6 pt-20 flex flex-col items-center">
+            <div class="w-full h-full flex flex-col items-center space-y-6">
+                <!-- Drawing Canvas -->
+                <div class="w-full h-72 bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden relative">
+                    <!-- Mandala Template -->
+                    <img src="./images/mandala.svg" class="absolute inset-0 w-full h-full opacity-20" alt="Mandala Template">
+                    
+                    <!-- Canvas Placeholder -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <p class="text-gray-400">点击开始绘制...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer Controls -->
+        <footer class="p-4 z-10 space-y-3">
+            <!-- Color Palette -->
+            <div class="flex justify-between px-2">
+                <div class="w-8 h-8 rounded-full bg-red-400 border-2 border-white shadow-sm"></div>
+                <div class="w-8 h-8 rounded-full bg-orange-400 border-2 border-white shadow-sm"></div>
+                <div class="w-8 h-8 rounded-full bg-yellow-400 border-2 border-white shadow-sm ring-2 ring-purple-500"></div>
+                <div class="w-8 h-8 rounded-full bg-green-400 border-2 border-white shadow-sm"></div>
+                <div class="w-8 h-8 rounded-full bg-blue-400 border-2 border-white shadow-sm"></div>
+                <div class="w-8 h-8 rounded-full bg-indigo-400 border-2 border-white shadow-sm"></div>
+                <div class="w-8 h-8 rounded-full bg-purple-400 border-2 border-white shadow-sm"></div>
+            </div>
+            <!-- Tools -->
+            <div class="bg-white/60 backdrop-blur-xl rounded-2xl p-2 shadow-inner-lg border border-white/50 flex justify-around items-center">
+                 <button class="p-3 rounded-lg bg-purple-100/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536L16.732 3.732z" /></svg>
+                 </button>
+                 <button class="p-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4z" /><path d="M12 21h4a2 2 0 002-2v-5a2 2 0 00-2-2h-2.5" /></svg>
+                 </button>
+                 <button class="p-3">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14" /></svg>
+                 </button>
+                 <button class="p-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" /></svg>
+                 </button>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 

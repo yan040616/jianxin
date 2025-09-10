@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程报名 - YNU-健心</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200 flex justify-center items-center min-h-screen">
+    <div class="page-container flex flex-col max-h-[844px]">
+        <!-- Header -->
+        <div class="page-header sticky top-0 z-30">
+            <a href="javascript:history.back()" class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1 class="page-title text-center">课程报名</h1>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content flex-1 overflow-y-auto">
+            <div class="p-6 space-y-6">
+                <!-- Course Info -->
+                <div class="bg-white/40 backdrop-blur-xl rounded-2xl p-4 shadow-lg border border-white/50">
+                    <div class="flex gap-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-200 to-indigo-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white/70" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="font-semibold text-gray-800">情绪管理基础</h2>
+                            <div class="flex items-center gap-2 mt-1">
+                                <span class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full">情绪管理</span>
+                                <span class="text-xs text-gray-500">4课时 · 初级</span>
+                            </div>
+                            <div class="flex items-center gap-1 mt-2 text-sm text-gray-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>总时长: 3.5小时</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher Info -->
+                <div class="bg-white/40 backdrop-blur-xl rounded-2xl p-4 shadow-lg border border-white/50">
+                    <h3 class="font-semibold text-gray-700 mb-3">授课老师</h3>
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-full bg-blue-100 overflow-hidden">
+                            <img src="https://i.pravatar.cc/150?img=1" alt="Teacher Avatar" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <p class="font-medium text-gray-800">张教授</p>
+                            <p class="text-xs text-gray-500 mt-0.5">心理健康咨询师</p>
+                            <div class="flex items-center gap-1 text-yellow-500 mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span class="text-xs">4.8 (126条评价)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Schedule -->
+                <div class="bg-white/40 backdrop-blur-xl rounded-2xl p-4 shadow-lg border border-white/50">
+                    <h3 class="font-semibold text-gray-700 mb-3">选择班次</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center p-3 bg-purple-50 rounded-xl border border-purple-100">
+                            <input type="radio" id="class1" name="class" class="form-radio h-5 w-5 text-purple-600" checked>
+                            <label for="class1" class="ml-3 flex-1">
+                                <div class="font-medium text-gray-800">周一班</div>
+                                <div class="text-xs text-gray-500 mt-0.5">每周一 19:00-20:30</div>
+                            </label>
+                            <span class="text-purple-600 font-medium">推荐</span>
+                        </div>
+                        <div class="flex items-center p-3 rounded-xl border border-gray-200">
+                            <input type="radio" id="class2" name="class" class="form-radio h-5 w-5 text-purple-600">
+                            <label for="class2" class="ml-3">
+                                <div class="font-medium text-gray-800">周三班</div>
+                                <div class="text-xs text-gray-500 mt-0.5">每周三 19:00-20:30</div>
+                            </label>
+                        </div>
+                        <div class="flex items-center p-3 rounded-xl border border-gray-200">
+                            <input type="radio" id="class3" name="class" class="form-radio h-5 w-5 text-purple-600">
+                            <label for="class3" class="ml-3">
+                                <div class="font-medium text-gray-800">周六班</div>
+                                <div class="text-xs text-gray-500 mt-0.5">每周六 14:00-15:30</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Start Date -->
+                <div class="bg-white/40 backdrop-blur-xl rounded-2xl p-4 shadow-lg border border-white/50">
+                    <h3 class="font-semibold text-gray-700 mb-3">开课日期</h3>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="font-medium text-gray-800">2024年4月8日</p>
+                            <p class="text-xs text-gray-500 mt-0.5">共4周课程</p>
+                        </div>
+                        <button class="text-purple-600 text-sm font-medium">更改</button>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="bg-white/40 backdrop-blur-xl rounded-2xl p-4 shadow-lg border border-white/50">
+                    <h3 class="font-semibold text-gray-700 mb-3">联系方式</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">姓名</label>
+                            <input type="text" id="name" class="w-full py-2 px-3 rounded-lg bg-white/60 border border-gray-200 focus:ring-2 focus:ring-purple-400 focus:outline-none">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">手机号码</label>
+                            <input type="tel" id="phone" class="w-full py-2 px-3 rounded-lg bg-white/60 border border-gray-200 focus:ring-2 focus:ring-purple-400 focus:outline-none">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">邮箱 (选填)</label>
+                            <input type="email" id="email" class="w-full py-2 px-3 rounded-lg bg-white/60 border border-gray-200 focus:ring-2 focus:ring-purple-400 focus:outline-none">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notes -->
+                <div class="bg-white/40 backdrop-blur-xl rounded-2xl p-4 shadow-lg border border-white/50">
+                    <h3 class="font-semibold text-gray-700 mb-3">备注 (选填)</h3>
+                    <textarea rows="3" class="w-full py-2 px-3 rounded-lg bg-white/60 border border-gray-200 focus:ring-2 focus:ring-purple-400 focus:outline-none" placeholder="有什么想告诉老师的..."></textarea>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Action -->
+        <div class="sticky bottom-0 left-0 right-0 bg-white/80 backdrop-blur-xl border-t border-white/50 p-4 flex items-center justify-between z-20">
+            <div>
+                <p class="text-xs text-gray-500">学时</p>
+                <p class="font-bold text-gray-800">3学时</p>
+            </div>
+            <button id="enrollButton" class="btn bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-8 py-3 rounded-full shadow-lg">
+                确认报名
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get course ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const courseId = urlParams.get('id');
+            
+            // Handle enrollment button click
+            document.getElementById('enrollButton').addEventListener('click', function() {
+                // Show success message (in a real app, you would submit the form)
+                alert('报名成功！课程已添加到您的课程表。');
+                // Redirect back to course detail
+                window.location.href = 'course-detail.html?id=' + courseId;
+            });
+        });
+    </script>
+</body>
+</html> 

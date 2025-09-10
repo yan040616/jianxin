@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心情记录 - YNU-健心</title>
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-200 flex justify-center items-center min-h-screen">
+    <div class="w-[390px] h-[844px] bg-[#F0F2FE] shadow-2xl rounded-[40px] overflow-hidden relative font-sans">
+        <!-- Header -->
+        <div class="page-header">
+            <a href="profile.html" class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1 class="page-title text-center">心情记录</h1>
+        </div>
+
+        <!-- Main Content -->
+        <main class="p-6 space-y-4">
+            <!-- Stats Card -->
+            <div class="card text-center py-6">
+                <p class="text-gray-600 text-sm">心情良好天数</p>
+                <p class="text-3xl font-bold text-gray-800 mt-2">89天</p>
+                <p class="text-sm text-green-500 mt-1">较上月 +12天</p>
+            </div>
+
+            <!-- Chart Card -->
+            <div class="card">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="font-semibold text-gray-700">心情趋势</h2>
+                    <div class="flex gap-2">
+                        <button class="px-3 py-1 rounded-full bg-purple-500 text-white text-sm">周</button>
+                        <button class="px-3 py-1 rounded-full bg-white/50 text-gray-600 text-sm">月</button>
+                        <button class="px-3 py-1 rounded-full bg-white/50 text-gray-600 text-sm">年</button>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="moodChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Mood Summary -->
+            <div class="card">
+                <h2 class="font-semibold text-gray-700 mb-4">本周小结</h2>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            <span class="text-gray-600">心情愉悦</span>
+                        </div>
+                        <span class="text-gray-800 font-medium">4天</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
+                            <span class="text-gray-600">心情平静</span>
+                        </div>
+                        <span class="text-gray-800 font-medium">2天</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                            <span class="text-gray-600">心情低落</span>
+                        </div>
+                        <span class="text-gray-800 font-medium">1天</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // 初始化心情折线图
+        const ctx = document.getElementById('moodChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+                datasets: [{
+                    label: '心情指数',
+                    data: [85, 90, 75, 95, 85, 88, 92],
+                    borderColor: '#8B5CF6',
+                    backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: {
+                            display: false
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

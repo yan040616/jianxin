@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>积分明细 - YNU-健心</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200 flex justify-center items-center min-h-screen">
+    <div class="w-[390px] h-[844px] bg-[#F0F2FE] shadow-2xl rounded-[40px] overflow-hidden relative font-sans">
+        <!-- Header -->
+        <div class="page-header">
+            <a href="profile.html" class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1 class="page-title text-center">积分明细</h1>
+        </div>
+
+        <!-- Main Content -->
+        <main class="p-6 space-y-4">
+            <!-- Total Points Card -->
+            <div class="card text-center py-6">
+                <p class="text-gray-600 text-sm">当前积分</p>
+                <p class="text-3xl font-bold text-gray-800 mt-2">1,250</p>
+            </div>
+
+            <!-- Points History -->
+            <div class="card space-y-4">
+                <h2 class="font-semibold text-gray-700">积分记录</h2>
+                <div class="space-y-4">
+                    <div class="list-item">
+                        <div>
+                            <p class="font-medium text-gray-800">完成冥想练习</p>
+                            <p class="text-sm text-gray-500">2024-03-15 14:30</p>
+                        </div>
+                        <p class="text-green-500 font-medium">+10</p>
+                    </div>
+                    <div class="list-item">
+                        <div>
+                            <p class="font-medium text-gray-800">参与团体活动</p>
+                            <p class="text-sm text-gray-500">2024-03-14 16:00</p>
+                        </div>
+                        <p class="text-green-500 font-medium">+50</p>
+                    </div>
+                    <div class="list-item">
+                        <div>
+                            <p class="font-medium text-gray-800">兑换心理咨询</p>
+                            <p class="text-sm text-gray-500">2024-03-13 10:15</p>
+                        </div>
+                        <p class="text-red-500 font-medium">-100</p>
+                    </div>
+                    <div class="list-item">
+                        <div>
+                            <p class="font-medium text-gray-800">连续打卡7天</p>
+                            <p class="text-sm text-gray-500">2024-03-12 20:00</p>
+                        </div>
+                        <p class="text-green-500 font-medium">+70</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html> 

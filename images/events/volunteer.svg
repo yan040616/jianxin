@@ -1,0 +1,63 @@
+<svg width="390" height="200" viewBox="0 0 390 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#43A047" />
+            <stop offset="100%" stop-color="#66BB6A" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="390" height="200" fill="url(#bgGradient)" />
+    
+    <!-- Sun -->
+    <circle cx="45" cy="45" r="25" fill="#FFC107" />
+    <g stroke="#FFC107" stroke-width="3">
+        <line x1="45" y1="10" x2="45" y2="0" />
+        <line x1="45" y1="90" x2="45" y2="80" />
+        <line x1="10" y1="45" x2="0" y2="45" />
+        <line x1="90" y1="45" x2="80" y2="45" />
+        <line x1="20" y1="20" x2="13" y2="13" />
+        <line x1="70" y1="70" x2="77" y2="77" />
+        <line x1="20" y1="70" x2="13" y2="77" />
+        <line x1="70" y1="20" x2="77" y2="13" />
+    </g>
+    
+    <!-- Ground -->
+    <rect x="0" y="150" width="390" height="50" fill="#8BC34A" />
+    
+    <!-- People silhouettes -->
+    <g>
+        <!-- Person 1 - holding heart -->
+        <circle cx="100" cy="110" r="20" fill="#333" />
+        <rect x="90" y="130" width="20" height="40" rx="5" fill="#333" />
+        <path d="M70 130 L90 150 L90 170" stroke="#333" stroke-width="8" stroke-linecap="round" />
+        <path d="M130 130 L110 150" stroke="#333" stroke-width="8" stroke-linecap="round" />
+        <path d="M120 100 C130 90, 140 90, 140 100 L140 110 C140 120, 130 120, 120 110 Z" fill="#F44336" />
+        
+        <!-- Person 2 - planting -->
+        <circle cx="190" cy="110" r="20" fill="#333" />
+        <rect x="180" y="130" width="20" height="40" rx="5" fill="#333" />
+        <path d="M160 170 L180 150 L180 170" stroke="#333" stroke-width="8" stroke-linecap="round" />
+        <path d="M220 170 L200 150 L200 170" stroke="#333" stroke-width="8" stroke-linecap="round" />
+        <path d="M190 150 L190 170" stroke="#795548" stroke-width="4" />
+        <path d="M180 150 C190 140, 200 140, 210 150" fill="#4CAF50" />
+        
+        <!-- Person 3 - helping -->
+        <circle cx="280" cy="110" r="20" fill="#333" />
+        <rect x="270" y="130" width="20" height="40" rx="5" fill="#333" />
+        <path d="M250 150 L270 130" stroke="#333" stroke-width="8" stroke-linecap="round" />
+        <path d="M310 150 L290 130" stroke="#333" stroke-width="8" stroke-linecap="round" />
+        
+        <!-- Person 4 - being helped -->
+        <circle cx="310" cy="140" r="15" fill="#333" />
+        <rect x="302" y="155" width="16" height="30" rx="4" fill="#333" />
+        <path d="M290 185 L302 170" stroke="#333" stroke-width="6" stroke-linecap="round" />
+        <path d="M330 185 L318 170" stroke="#333" stroke-width="6" stroke-linecap="round" />
+    </g>
+    
+    <!-- Heart symbol -->
+    <path d="M340 40 C350 30, 360 30, 360 40 C360 50, 350 60, 340 70 C330 60, 320 50, 320 40 C320 30, 330 30, 340 40 Z" fill="#F44336" />
+    
+    <!-- Text -->
+    <text x="195" y="190" font-family="Arial" font-size="16" fill="white" text-anchor="middle" font-weight="bold">校园志愿者招募</text>
+</svg> 
